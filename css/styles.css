@@ -257,6 +257,44 @@ header .menu .container nav .menu-items li a {
   margin-top: 10px;
 }
 
+.detail {
+  margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .detail {
+    margin-bottom: 50px;
+  }
+}
+.detail .videoHolder {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 992px) {
+  .detail .videoHolder {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.detail .videoHolder .videoWrap iframe {
+  width: 100%;
+  max-width: 460px;
+  height: 315px;
+}
+@media (min-width: 600px) {
+  .detail .videoHolder .videoWrap iframe {
+    width: 560px;
+  }
+}
+.detail .videoHolder .textWrap {
+  max-width: 500px;
+}
+
 html {
   margin: 0;
   padding: 0;
