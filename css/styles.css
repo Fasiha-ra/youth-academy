@@ -231,13 +231,22 @@ header .menu .container nav .menu-items li a {
   text-align: center;
 }
 .counter-section .counter .count {
-  font-size: 36px;
+  font-size: 30px;
+  line-height: 36px;
   font-weight: bold;
   color: #111;
   display: block;
 }
+@media (min-width: 992px) {
+  .counter-section .counter .count {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
 .counter-section .counter strong {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .counter-section .counter .inc {
   font-size: 30px;

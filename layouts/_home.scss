@@ -29,14 +29,20 @@
         text-align: center;
         
         .count {
-            font-size: 36px;
+            font-size: 30px;
+            line-height: 36px;
             font-weight: bold;
             color: #111;
             display: block;
-          
+          @media (min-width:992px){
+            font-size: 36px;
+            line-height: 40px;
+          }
         }
         strong{
             display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .inc{
             font-size: 30px;
