@@ -294,6 +294,57 @@ header .menu .container nav .menu-items li a {
 .detail .videoHolder .textWrap {
   max-width: 500px;
 }
+.detail .videoHolder .textWrap h1 {
+  color: #070052;
+}
+
+.category {
+  background-color: #F9F8FF;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .category {
+    margin-bottom: 50px;
+  }
+}
+.category .heading {
+  margin-bottom: 40px;
+}
+.category .slide {
+  padding-bottom: 30px;
+}
+.category .slider-container {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.slick-slide {
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.5s ease;
+  opacity: 0.6;
+}
+.slick-slide img {
+  width: 100%;
+  max-width: 327px;
+  min-height: 443px;
+  border-radius: 10px;
+}
+.slick-slide h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+.slick-slide p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.slick-center {
+  transform: scale(1.1);
+  opacity: 1;
+}
 
 html {
   margin: 0;
