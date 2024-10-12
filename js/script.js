@@ -10,7 +10,7 @@ $(".sliders").slick({
     dots:true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     arrows: false,
     responsive: [
@@ -63,6 +63,15 @@ $(".sliders").slick({
       autoplaySpeed: 2000,
       responsive: [
         {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 2
+          }
+        },
+        {
           breakpoint: 768,
           settings: {
             arrows: false,
@@ -83,3 +92,8 @@ $(".sliders").slick({
       ]
     });
   });
+
+
+  
+
+
