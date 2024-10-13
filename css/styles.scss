@@ -161,4 +161,10 @@ button {
 }
 
 
+.section {
+  display: none; /* Hide sections by default */
+}
 
+.section.active {
+  display: block; /* Show active section */
+}

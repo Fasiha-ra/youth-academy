@@ -1,3 +1,4 @@
+//burger menu
 const burgerMenu = document.querySelector('.burger-menu');
 const menuItems = document.querySelector('.menu-items');
 
@@ -5,7 +6,7 @@ burgerMenu.addEventListener('click', () => {
     menuItems.classList.toggle('active');
 });
 
-
+//home slider
 $(".sliders").slick({
     dots:true,
     slidesToShow: 1,
@@ -23,7 +24,7 @@ $(".sliders").slick({
      
     ],
   });
-
+//counter
   const counters = document.querySelectorAll('.count');
     
   counters.forEach(counter => {
@@ -53,7 +54,7 @@ $(".sliders").slick({
       observer.observe(section);
   });
 
-
+//courses slider
   $(document).ready(function(){
     $('.slider').slick({
       centerMode: true,
@@ -95,5 +96,34 @@ $(".sliders").slick({
 
 
   
+const date=new Date();
+const year=date.getFullYear();
+const hour= date.getHours();
+const min= date.getMinutes();
+const sec= date.getSeconds();
+document.getElementById("hours").innerHTML=`${hour}h`;
+document.getElementById("minutes").innerHTML=`${min}m`;
+document.getElementById("seconds").innerHTML=`${sec}s`;
+document.getElementById("showyear").innerHTML= `©${year}`;
 
+function setActive(selectedId) {
+  // Hide all sections
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+      section.classList.remove('active'); // Remove active class to hide
+  });
 
+  // Show the selected section
+  const selectedSection = document.getElementById(selectedId + 'Section');
+  selectedSection.classList.add('active'); // Add active class to show
+
+  // Remove active class from all links
+  const menuItems = document.querySelectorAll('.menu-items a');
+  menuItems.forEach(item => {
+      item.classList.remove('active');
+  });
+
+  // Add active class to the selected link
+  const selectedItem = document.getElementById(selectedId);
+  selectedItem.classList.add('active');
+}

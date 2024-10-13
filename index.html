@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" type="text/css" href="css/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css" />
 
@@ -16,9 +22,9 @@
         <div class="container">
           <strong>Get upto 70% Discount Today </strong>
           <div class="clock">
-            <span class="hours time">00</span>
-            <span class="minutes time">00</span>
-            <span class="seconds time">00</span>
+            <span class="hours time" id="hours"></span>
+            <span class="minutes time" id="minutes"></span>
+            <span class="seconds time" id="seconds"></span>
           </div>
           <button>Grab Now</button>
         </div>
@@ -57,17 +63,16 @@
               <span></span>
             </button>
             <ul class="menu-items">
-              <li><a href="">Home</a></li>
-              <li><a href="">About</a></li>
-              <li><a href="">Course</a></li>
-              <li><a href="">Pages</a></li>
-              <li><a href="">Contact</a></li>
-            </ul>
+              <li><a href="#" id="home" class="active" onclick="setActive('home')">Home</a></li>
+              <li><a href="#" id="about" onclick="setActive('about')">About</a></li>
+              <li><a href="#" id="course" onclick="setActive('course')">Course</a></li>
+              <li><a href="#" id="contact" onclick="setActive('contact')">Contact</a></li>
+          </ul>
           </nav>
         </div>
       </div>
     </header>
-    <section id="home">
+    <section id="homeSection" class="section active">
       <div class="hero">
         <div class="sliders">
           <img src="/images/hero/PART1.png" alt="slide" />
@@ -168,10 +173,16 @@
               <p>Description for slide 4.</p>
               <button class="btn">Learn More</button>
             </div>
-           
           </div>
         </div>
       </div>
+    </section>
+    <section id="aboutSection" class="section">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+      praesentium, quod sint delectus a perspiciatis animi! Voluptatum soluta
+      praesentium doloribus quos ipsum amet, sint modi officia asperiores quod
+      laudantium sapiente provident optio ea voluptate maiores alias vero cumque
+      accusamus illo esse repudiandae. Explicabo, soluta?
     </section>
     <footer>
       <div class="footer-container">
@@ -221,27 +232,38 @@
         <div class="footer-section">
           <h4>Get App</h4>
           <div class="app-links">
-            <a href="#"><img src="/images/footer/googlePlay.svg" alt="Google Play" /></a>
-            <a href="#"><img src="/images/footer/appStore.svg" alt="App Store" /></a>
+            <a href="#"
+              ><img src="/images/footer/googlePlay.svg" alt="Google Play"
+            /></a>
+            <a href="#"
+              ><img src="/images/footer/appStore.svg" alt="App Store"
+            /></a>
           </div>
         </div>
       </div>
 
       <div class="footer-contact">
-        <div>
-          <i class="fas fa-phone"></i>
-          <p>Call Us</p>
-          <p>123456789</p>
+        <div class="contact">
+          <div class="flex">
+            <i class="fas fa-phone"></i>
+            <p>Call Us</p>
+          </div>
+          <a href="tel+:123456789">123456789</a>
         </div>
-        <div>
-          <i class="fas fa-envelope"></i>
-          <p>Email Us</p>
+        <div class="contact">
+          <div class="flex">
+            <i class="fas fa-envelope"></i>
+            <p>Email Us</p>
+          </div>
           <p>info@youthacademy.com</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>Copyright ©2024 Chaajao Technologies - All Rights Reserved</p>
+        <p>
+          Copyright <span id="showyear"></span> Youth Academy - All Rights
+          Reserved
+        </p>
       </div>
     </footer>
 
