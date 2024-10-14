@@ -5,7 +5,9 @@ const menuItems = document.querySelector('.menu-items');
 burgerMenu.addEventListener('click', () => {
     menuItems.classList.toggle('active');
 });
-
+menuItems.addEventListener("click",()=>{
+  menuItems.classList.remove("active")
+})
 //home slider
 $(".sliders").slick({
     dots:true,
@@ -105,6 +107,12 @@ document.getElementById("hours").innerHTML=`${hour}h`;
 document.getElementById("minutes").innerHTML=`${min}m`;
 document.getElementById("seconds").innerHTML=`${sec}s`;
 document.getElementById("showyear").innerHTML= `©${year}`;
+//select section
+document.addEventListener('DOMContentLoaded', () => {
+  // Check localStorage for the last active section
+  const lastActiveSection = localStorage.getItem('activeSection') || 'home';
+  setActive(lastActiveSection);
+});
 
 function setActive(selectedId) {
   // Hide all sections
@@ -126,4 +134,45 @@ function setActive(selectedId) {
   // Add active class to the selected link
   const selectedItem = document.getElementById(selectedId);
   selectedItem.classList.add('active');
+
+  // Store the active section in localStorage
+  localStorage.setItem('activeSection', selectedId);
 }
+
+//contact form
+function validateForm() {
+  const form = document.getElementById('inquiryForm');
+  if (form.checkValidity()) {
+      alert("Form submitted successfully!");
+      return true;
+  } else {
+      alert("Please fill out all required fields.");
+      return false;
+  }
+}
+//rating
+$(".cardSlider").slick({
+  dots:true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: false,
+  autoplaySpeed: 2000,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+       arrows:false,
+       slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 576,
+      settings: {
+       arrows:false,
+       slidesToShow: 1,
+      },
+    },
+   
+  ],
+});

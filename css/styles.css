@@ -304,7 +304,7 @@ header .menu .container nav .menu-items li a {
 }
 
 .category {
-  background-color: #F9F8FF;
+  background-color: #f9f8ff;
   padding: 20px 0;
   margin-bottom: 30px;
   text-align: center;
@@ -333,8 +333,13 @@ header .menu .container nav .menu-items li a {
 .category .slick-slide img {
   width: 100%;
   max-width: 327px;
-  min-height: 443px;
+  min-height: 320px;
   border-radius: 10px;
+}
+@media (min-width: 992px) {
+  .category .slick-slide img {
+    min-height: 443px;
+  }
 }
 .category .slick-slide h2 {
   font-size: 1.5rem;
@@ -348,6 +353,52 @@ header .menu .container nav .menu-items li a {
   transform: scale(1.1);
   opacity: 1;
   padding-bottom: 30px;
+}
+
+.rating {
+  margin-bottom: 40px;
+}
+@media (min-width: 992px) {
+  .rating {
+    margin-bottom: 60px;
+  }
+}
+.rating .text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.rating .text .para {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
+}
+.rating .cards .card {
+  margin: 5px 15px;
+  width: 100%;
+  max-width: 370px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 1px 11px 1px rgba(0, 0, 0, 0.2);
+}
+.rating .cards .card .heading .textWrap {
+  display: flex;
+  gap: 5px;
+}
+.rating .cards .card .iconsWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rating .cards .card .iconsWrap img {
+  width: 100%;
+  max-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+}
+.rating .cards .card .iconsWrap strong {
+  display: flex;
 }
 
 footer {
@@ -474,6 +525,64 @@ footer .footer-bottom {
   font-size: 14px;
   border-top: 1px solid #444;
   padding-top: 10px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.offices {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.offices .office {
+  flex: 1;
+  margin-right: 20px;
+}
+.offices .office:last-child {
+  margin-right: 0;
+}
+.offices .office h2 {
+  color: #ff0000;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ff0000;
+  outline: none;
+}
+
+button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #cc0000;
 }
 
 html {

@@ -1,0 +1,71 @@
+$primary-color: #333;
+$accent-color: #ff0000;
+$background-color: #f9f9f9;
+$white: #fff;
+
+
+
+
+
+h1 {
+    color: $primary-color;
+    margin-bottom: 10px;
+}
+
+.offices {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .office {
+        flex: 1;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        h2 {
+            color: $accent-color;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: $primary-color;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+
+        &:focus {
+            border-color: $accent-color;
+            outline: none;
+        }
+    }
+}
+
+button {
+    background-color: $accent-color;
+    color: $white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+        background-color: darken($accent-color, 10%);
+    }
+}
