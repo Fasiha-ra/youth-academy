@@ -1,0 +1,128 @@
+.articles {
+  margin: 30px 0;
+  .container {
+    .heading {
+      // Center the heading and give it a max width
+      max-width: 800px; // Adjust this value as needed
+      margin: 0 auto 60px; // Center horizontally
+      text-align: center; // Center the text
+
+      // Styling for the h1 element
+      h1 {
+        
+        font-weight: 700; // Make the text bold
+        color: #333; // Change text color
+        margin: 20px 0; // Spacing above and below
+
+        // Add a text shadow for depth (optional)
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+
+        // Add a hover effect
+        &:hover {
+          color: #0056b3; // Change color on hover
+          transition: color 0.3s ease; // Smooth transition
+        }
+      }
+
+      // Optional: Add a border or background
+      &::after {
+        content: ""; // Use a pseudo-element for a decorative line
+        display: block;
+        height: 4px; // Thickness of the line
+        background: linear-gradient(to right, #f06, #48f); // Gradient line
+        margin: 10px auto; // Center the line
+        width: 80%; // Width of the line
+        border-radius: 5px; // Rounded edges
+      }
+    }
+
+    .card {
+      display: flex;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+      &:hover {
+        .image-container img {
+          transform: scale(1.1);
+        }
+
+        .content {
+          transform: translateX(10px);
+        }
+      }
+    }
+
+    .image-container {
+      flex: 0 0 300px;
+      overflow: hidden;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    .content {
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+
+      .category {
+        color: gray;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        color: #1e2a78;
+        font-size: 22px;
+        margin: 0 0 10px;
+      }
+
+      .description {
+        color: #8f8f8f;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .author {
+        display: flex;
+        align-items: center;
+
+        .author-image {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .author-info {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          span {
+            display: block;
+          }
+          .author-name {
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          .date {
+            font-size: 12px;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+}

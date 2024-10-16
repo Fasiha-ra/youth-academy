@@ -156,7 +156,7 @@
                 placeholder="Enter Your Email"
                 required
               />
-              <span class="error-message" id="nameError"></span>
+              <span class="error-message" id="emailError"></span>
             </div>
             <div class="form-group">
               <label for="name">Your Phone No *</label>
@@ -167,23 +167,29 @@
                 placeholder="Enter Your Number"
                 required
               />
-              <span class="error-message" id="nameError"></span>
+              <span class="error-message" id="numberError"></span>
             </div>
             <div class="form-group">
               <label for="name">Your Message *</label>
               <textarea
-                id="name"
+                id="message"
                 name="name"
-                placeholder="Name Here"
+                placeholder="Enter message"
                 required
               ></textarea>
 
-              <span class="error-message" id="nameError"></span>
+              <span class="error-message" id="messageError"></span>
             </div>
             <button class="btn">Submit</button>
           </form>
           <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27209.378271851976!2d74.329901287133!3d31.519427783949297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904f882882933%3A0x2e3a0b6cac8e6026!2sGulberg%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1729057766565!5m2!1sen!2s"   style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27209.378271851976!2d74.329901287133!3d31.519427783949297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904f882882933%3A0x2e3a0b6cac8e6026!2sGulberg%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1729057766565!5m2!1sen!2s"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -270,89 +276,74 @@
         </p>
       </div>
     </footer>
-<script src="/js/script.js"></script>
-    <script>// Form validation and submission
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
-      
-        // Validate the form fields
-        const isValid = validateForm();
-      
-        if (isValid) {
-          // Capture and log the form data to the console
-          const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('number').value,
-            message: document.getElementById('message').value
-          };
-      
-          console.log('Form Data Submitted:', formData);
-        }
-      });
-      
-      // Validate form fields
-      function validateForm() {
-        const name = document.getElementById('name');
-        const email = document.getElementById('email');
-        const number = document.getElementById('number');
-        const message = document.getElementById('message');
-      
-        // Reset error messages
-        resetErrors();
-      
-        let isValid = true;
-      
-        // Name validation
-        if (name.value.trim() === '') {
-          displayError('nameError', 'Name is required.');
-          isValid = false;
-        }
-      
-        // Email validation
-        if (email.value.trim() === '') {
-          displayError('emailError', 'Email is required.');
-          isValid = false;
-        } else if (!validateEmail(email.value)) {
-          displayError('emailError', 'Invalid email address.');
-          isValid = false;
-        }
-      
-        // Phone number validation
-        if (number.value.trim() === '') {
-          displayError('numberError', 'Phone number is required.');
-          isValid = false;
-        }
-      
-        // Message validation
-        if (message.value.trim() === '') {
-          displayError('messageError', 'Message is required.');
-          isValid = false;
-        }
-      
-        return isValid;
-      }
-      
-      // Reset error messages
-      function resetErrors() {
-        const errorElements = document.querySelectorAll('.error-message');
-        errorElements.forEach((element) => {
-          element.style.display = 'none';
-        });
-      }
-      
-      // Display error message
-      function displayError(elementId, message) {
-        const errorElement = document.getElementById(elementId);
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-        errorElement.style.color = 'red'; // Show error in red
-      }
-      
-      // Validate email format
-      function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }</script>
+    <script src="/js/script.js"></script>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent form submission
+  
+  let isValid = true;
+
+  // Clear any previous errors
+  document.getElementById('nameError').textContent = '';
+  document.getElementById('emailError').textContent = '';
+  document.getElementById('numberError').textContent = '';
+  document.getElementById('messageError').textContent = '';
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const number = document.getElementById('number').value;
+  const message = document.getElementById('message').value;
+
+  // Name validation
+  if (name === '') {
+    document.getElementById('nameError').textContent = 'Name is required';
+    console.error('Name field is empty');
+    isValid = false;
+  }
+
+  // Email validation
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (email === '') {
+    document.getElementById('emailError').textContent = 'Email is required';
+    console.error('Email field is empty');
+    isValid = false;
+  } else if (!email.match(emailPattern)) {
+    document.getElementById('emailError').textContent = 'Invalid email address';
+    console.error('Invalid email format');
+    isValid = false;
+  }
+
+  // Number validation
+  if (number === '') {
+    document.getElementById('numberError').textContent = 'Phone number is required';
+    console.error('Phone number field is empty');
+    isValid = false;
+  } else if (number.length < 10) {
+    document.getElementById('numberError').textContent = 'Phone number must be at least 10 digits';
+    console.error('Phone number is too short');
+    isValid = false;
+  }
+
+  // Message validation
+  if (message === '') {
+    document.getElementById('messageError').textContent = 'Message is required';
+    console.error('Message field is empty');
+    isValid = false;
+  }
+
+  // If all fields are valid, log success
+  if (isValid) {
+    console.log('Form is valid');
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('number').value = '';
+    document.getElementById('message').value = '';
+   
+  } else {
+    console.warn('Form submission prevented due to validation errors');
+  }
+});
+
+    </script>
   </body>
 </html>

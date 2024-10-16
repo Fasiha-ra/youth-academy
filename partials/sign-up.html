@@ -8,89 +8,62 @@
   </head>
   <body>
     <section class="signup">
-      <div class="container">
-        <div class="left">
-          <img src="logo.png" alt="Logo" />
-          <h1>Chaajao</h1>
-          <p>PARHO AUR</p>
-        </div>
-        <div class="right">
-          <h2>Sign Up</h2>
-          <form id="signupForm" novalidate onsubmit="signUpForm()">
-            <div class="form-group">
-              <label for="name">Your Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name Here"
-                required
-              />
-              <span class="error-message" id="nameError"></span>
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-                required
-              />
-              <span class="error-message" id="emailError"></span>
-            </div>
-            <div class="form-group">
-              <label for="whatsapp">WhatsApp No *</label>
-              <div class="phone-input">
-                <select id="countryCode" required>
-                  <option value="+92">🇵🇰 +92</option>
-                  <!-- Add more country codes if needed -->
-                </select>
-                <input
-                  type="tel"
-                  id="whatsapp"
-                  name="whatsapp"
-                  placeholder="+92"
-                  required
-                />
-              </div>
-              <span class="error-message" id="whatsappError"></span>
-            </div>
-            <div class="form-group">
-              <label for="password">Password *</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Password"
-                required
-              />
-              <span class="toggle-password" onclick="togglePassword('password')"
-                >👁️</span
-              >
-              <span class="error-message" id="passwordError"></span>
-            </div>
-            <div class="form-group">
-              <label for="confirmPassword">Confirm Password *</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                placeholder="Confirm Password"
-                required
-              />
-              <span
-                class="toggle-password"
-                onclick="togglePassword('confirmPassword')"
-                >👁️</span
-              >
-              <span class="error-message" id="confirmPasswordError"></span>
-            </div>
-            <button type="submit" class="btn">CONTINUE</button>
-          </form>
-          <p>Already have an account? <a href="#">Log in</a></p>
-        </div>
+     <div class="container">
+      <a href="/index.html" class="logoWrap">
+        <img src="/images/header/logo.png" alt="">
+        <h2>Youth Academy</h2>
+      </a>
+      <div class="formWrap">
+        <form action="post" id="contactForm">
+          <h2>Registration</h2>
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your Name"
+              required
+            />
+            <span class="error-message" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="name">Your Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Your Email"
+              required
+            />
+            <span class="error-message" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="name">Your Phone No *</label>
+            <input
+              type="number"
+              id="number"
+              name="number"
+              placeholder="Enter Your Number"
+              required
+            />
+            <span class="error-message" id="numberError"></span>
+          </div>
+          <div class="form-group">
+            <label for="name">Your Message *</label>
+            <textarea
+              id="message"
+              name="name"
+              placeholder="Enter message"
+              required
+            ></textarea>
+
+            <span class="error-message" id="messageError"></span>
+          </div>
+          <button class="btn">Submit</button>
+        </form>
       </div>
+     </div>
     </section>
     <script src="/js/script.js"></script>
   </body>

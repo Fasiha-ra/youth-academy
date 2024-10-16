@@ -234,5 +234,9 @@ function togglePassword(fieldId) {
   }
 }
 
-
-alert("fasihaaaa")
+//article detail page
+// const articalDetail = () => {
+//   console.log("fasoia");
+  
+//   window.location.href = "articleDetail.html";
+// };
