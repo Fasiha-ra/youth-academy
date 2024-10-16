@@ -107,49 +107,10 @@ document.getElementById("hours").innerHTML=`${hour}h`;
 document.getElementById("minutes").innerHTML=`${min}m`;
 document.getElementById("seconds").innerHTML=`${sec}s`;
 document.getElementById("showyear").innerHTML= `©${year}`;
-//select section
-document.addEventListener('DOMContentLoaded', () => {
-  // Check localStorage for the last active section
-  const lastActiveSection = localStorage.getItem('activeSection') || 'home';
-  setActive(lastActiveSection);
-});
-
-function setActive(selectedId) {
-  // Hide all sections
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(section => {
-      section.classList.remove('active'); // Remove active class to hide
-  });
-
-  // Show the selected section
-  const selectedSection = document.getElementById(selectedId + 'Section');
-  selectedSection.classList.add('active'); // Add active class to show
-
-  // Remove active class from all links
-  const menuItems = document.querySelectorAll('.menu-items a');
-  menuItems.forEach(item => {
-      item.classList.remove('active');
-  });
-
-  // Add active class to the selected link
-  const selectedItem = document.getElementById(selectedId);
-  selectedItem.classList.add('active');
-
-  // Store the active section in localStorage
-  localStorage.setItem('activeSection', selectedId);
-}
 
 //contact form
-function validateForm() {
-  const form = document.getElementById('inquiryForm');
-  if (form.checkValidity()) {
-      alert("Form submitted successfully!");
-      return true;
-  } else {
-      alert("Please fill out all required fields.");
-      return false;
-  }
-}
+
+
 //rating
 $(".cardSlider").slick({
   dots:true,
@@ -176,3 +137,102 @@ $(".cardSlider").slick({
    
   ],
 });
+//sign up
+function signUpForm() {
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const whatsapp = document.getElementById('whatsapp');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirmPassword');
+
+  // Reset error messages
+  resetErrors();
+
+  let isValid = true;
+
+  // Name validation
+  if (name.value.trim() === '') {
+    displayError('nameError', 'Name is required.');
+    isValid = false;
+  }
+
+  // Email validation
+  if (email.value.trim() === '') {
+    displayError('emailError', 'Email is required.');
+    isValid = false;
+  } else if (!validateEmail(email.value)) {
+    displayError('emailError', 'Invalid email address.');
+    isValid = false;
+  }
+
+  // WhatsApp validation
+  if (whatsapp.value.trim() === '') {
+    displayError('whatsappError', 'WhatsApp number is required.');
+    isValid = false;
+  }
+
+  // Password validation
+  if (password.value.trim() === '') {
+    displayError('passwordError', 'Password is required.');
+    isValid = false;
+  } else if (password.value.length < 6) {
+    displayError('passwordError', 'Password must be at least 6 characters long.');
+    isValid = false;
+  }
+
+  // Confirm Password validation
+  if (confirmPassword.value.trim() === '') {
+    displayError('confirmPasswordError', 'Confirm Password is required.');
+    isValid = false;
+  } else if (password.value !== confirmPassword.value) {
+    displayError('confirmPasswordError', 'Passwords do not match.');
+    isValid = false;
+  }
+
+  // Log form data to console if valid
+  if (isValid) {
+    console.log({
+      name: name.value,
+      email: email.value,
+      whatsapp: whatsapp.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value,
+    });
+  }
+
+  return false; // Prevent form submission
+}
+
+// Reset error messages
+function resetErrors() {
+  const errorElements = document.querySelectorAll('.error-message');
+  errorElements.forEach((element) => {
+    element.style.display = 'none';
+  });
+}
+
+// Display error message
+function displayError(elementId, message) {
+  const errorElement = document.getElementById(elementId);
+  errorElement.textContent = message;
+  errorElement.style.display = 'block';
+}
+
+// Validate email
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+// Function to toggle password visibility
+function togglePassword(fieldId) {
+  const field = document.getElementById(fieldId);
+  if (field.type === 'password') {
+    field.type = 'text';
+  } else {
+    field.type = 'password';
+  }
+}
+
+
+alert("fasihaaaa")

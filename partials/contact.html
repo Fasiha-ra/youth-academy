@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Youth Academy</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="discount">
+        <div class="container">
+          <strong>Get upto 70% Discount Today </strong>
+          <div class="clock">
+            <span class="hours time" id="hours"></span>
+            <span class="minutes time" id="minutes"></span>
+            <span class="seconds time" id="seconds"></span>
+          </div>
+          <button>Grab Now</button>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="container">
+          <div class="logo">
+            <img src="/images/header/logo.png" alt="logo" />
+          </div>
+          <div class="number">
+            <div class="whatsapp number">
+              <a href="https://wa.me/123456789" target="_blank">
+                <img src="/images/header/whatsapp.svg" alt="whatsapp" />
+                123456789
+              </a>
+            </div>
+            <div class="num number">
+              <a href="tel:123456789">
+                <img src="/images/header/phone.svg" alt="phone" />
+                123456789
+              </a>
+            </div>
+          </div>
+          <div class="login">
+            <button class="btn">Sign up</button>
+            <button class="secondary">Sign in</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="container">
+          <nav>
+            <button class="burger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="menu-items">
+              <li>
+                <a href="/index.html" id="home">Home</a>
+              </li>
+              <li>
+                <a href="/partials/about.html" id="about">About</a>
+              </li>
+              <li>
+                <a href="/partials/course.html" id="course">Course</a>
+              </li>
+              <li>
+                <a href="/partials/ya-store.html" id="YAStore(books)"
+                  >YA Store (books)</a
+                >
+              </li>
+              <li>
+                <a href="/partials/articles.html" id="Articles">Articles</a>
+              </li>
+              <li>
+                <a
+                  href="/partials/contact.html"
+                  id="contact"
+                  onclick="setActive('contact')"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="contactSection" class="contacts">
+      <div class="container">
+        <div class="heading"><h1>Contact Us</h1></div>
+
+        <div class="socialContact">
+          <a href="#" class="socialDetail">
+            <div class="text">
+              <div class="icon">
+                <img src="/images/header/whatsapp.svg" alt="whatsapp" />
+              </div>
+              <span>Whatsapp</span>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          </a>
+          <a href="#" class="socialDetail">
+            <div class="text">
+              <div class="icon">
+                <img src="/images/contact/messenger.svg" alt="messenger" />
+              </div>
+              <span>Messenger</span>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          </a>
+          <a href="#" class="socialDetail">
+            <div class="text">
+              <div class="icon">
+                <img src="/images/contact/email.svg" alt="email" />
+              </div>
+              <span>Email US</span>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          </a>
+          <a href="#" class="socialDetail">
+            <div class="text">
+              <div class="icon">
+                <img src="/images/contact/phone.svg" alt="phone" />
+              </div>
+              <span>Call Us</span>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          </a>
+        </div>
+        <div class="formHolder">
+          <form action="post" id="contactForm">
+            <h2>Get in Touch!</h2>
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your Name"
+                required
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="name">Your Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter Your Email"
+                required
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="name">Your Phone No *</label>
+              <input
+                type="number"
+                id="number"
+                name="number"
+                placeholder="Enter Your Number"
+                required
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="name">Your Message *</label>
+              <textarea
+                id="name"
+                name="name"
+                placeholder="Name Here"
+                required
+              ></textarea>
+
+              <span class="error-message" id="nameError"></span>
+            </div>
+            <button class="btn">Submit</button>
+          </form>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27209.378271851976!2d74.329901287133!3d31.519427783949297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904f882882933%3A0x2e3a0b6cac8e6026!2sGulberg%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1729057766565!5m2!1sen!2s"   style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section logo-section">
+          <img src="/images/header/logo.png" alt="Logo" />
+          <p>
+            The premium one-stop online learning platform for students all
+            around the globe!
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="#">SAT</a></li>
+            <li><a href="#">ECAT</a></li>
+            <li><a href="#">MDCAT</a></li>
+            <li><a href="#">BCAT</a></li>
+            <li><a href="#">IX-X</a></li>
+            <li><a href="#">XI-XII</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Other Links</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Get App</h4>
+          <div class="app-links">
+            <a href="#"
+              ><img src="/images/footer/googlePlay.svg" alt="Google Play"
+            /></a>
+            <a href="#"
+              ><img src="/images/footer/appStore.svg" alt="App Store"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <div class="contact">
+          <div class="flex">
+            <i class="fas fa-phone"></i>
+            <p>Call Us</p>
+          </div>
+          <a href="tel+:123456789">123456789</a>
+        </div>
+        <div class="contact">
+          <div class="flex">
+            <i class="fas fa-envelope"></i>
+            <p>Email Us</p>
+          </div>
+          <p>info@youthacademy.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          Copyright <span id="showyear"></span> Youth Academy - All Rights
+          Reserved
+        </p>
+      </div>
+    </footer>
+<script src="/js/script.js"></script>
+    <script>// Form validation and submission
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+      
+        // Validate the form fields
+        const isValid = validateForm();
+      
+        if (isValid) {
+          // Capture and log the form data to the console
+          const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('number').value,
+            message: document.getElementById('message').value
+          };
+      
+          console.log('Form Data Submitted:', formData);
+        }
+      });
+      
+      // Validate form fields
+      function validateForm() {
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const number = document.getElementById('number');
+        const message = document.getElementById('message');
+      
+        // Reset error messages
+        resetErrors();
+      
+        let isValid = true;
+      
+        // Name validation
+        if (name.value.trim() === '') {
+          displayError('nameError', 'Name is required.');
+          isValid = false;
+        }
+      
+        // Email validation
+        if (email.value.trim() === '') {
+          displayError('emailError', 'Email is required.');
+          isValid = false;
+        } else if (!validateEmail(email.value)) {
+          displayError('emailError', 'Invalid email address.');
+          isValid = false;
+        }
+      
+        // Phone number validation
+        if (number.value.trim() === '') {
+          displayError('numberError', 'Phone number is required.');
+          isValid = false;
+        }
+      
+        // Message validation
+        if (message.value.trim() === '') {
+          displayError('messageError', 'Message is required.');
+          isValid = false;
+        }
+      
+        return isValid;
+      }
+      
+      // Reset error messages
+      function resetErrors() {
+        const errorElements = document.querySelectorAll('.error-message');
+        errorElements.forEach((element) => {
+          element.style.display = 'none';
+        });
+      }
+      
+      // Display error message
+      function displayError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+        errorElement.style.color = 'red'; // Show error in red
+      }
+      
+      // Validate email format
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }</script>
+  </body>
+</html>
