@@ -15,69 +15,109 @@
         </a>
         <div class="formWrap">
           
-          <form action="post" id="contactForm">
+          <form id="contactForm" onsubmit="return validateForm(event)">
             <div class="log"><img src="/images/header/logo.png" alt="" /></div>
             <h2>Registration</h2>
+          
             <div class="form-group">
               <label for="name">Your Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your Name"
-                required
-              />
+              <input type="text" id="name" name="name" placeholder="Enter your Name" required />
               <span class="error-message" id="nameError"></span>
             </div>
+          
             <div class="form-group">
-              <label for="name">Your Email *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter Your Email"
-                required
-              />
+              <label for="email">Your Email *</label>
+              <input type="email" id="email" name="email" placeholder="Enter Your Email" required />
               <span class="error-message" id="emailError"></span>
             </div>
+          
             <div class="form-group">
-              <label for="name">Your Phone No *</label>
-              <input
-                type="number"
-                id="number"
-                name="number"
-                placeholder="Enter Your Number"
-                required
-              />
+              <label for="number">Your Phone No *</label>
+              <input type="tel" id="number" name="number" placeholder="Enter Your Number" required />
               <span class="error-message" id="numberError"></span>
             </div>
+          
             <div class="form-group">
-              <label for="name">Password *</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter Your password"
-                required
-              />
-              <span class="error-message" id="emailError"></span>
+              <label for="password">Password *</label>
+              <input type="password" id="password" name="password" placeholder="Enter Your Password" required />
+              <span class="error-message" id="passwordError"></span>
             </div>
+          
             <div class="form-group">
-              <label for="name">Confirm password*</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter Your password"
-                required
-              />
-              <span class="error-message" id="emailError"></span>
+              <label for="confirmPassword">Confirm Password *</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Your Password" required />
+              <span class="error-message" id="confirmPasswordError"></span>
             </div>
-            <button class="btn">Submit</button>
+          
+            <button class="btn" type="submit">Submit</button>
           </form>
         </div>
       </div>
     </section>
     <script src="/js/script.js"></script>
+  
+<script>
+  function validateForm(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    let isValid = true;
+
+    // Name validation
+    const name = document.getElementById('name').value;
+    const nameError = document.getElementById('nameError');
+    if (name.length < 3) {
+      nameError.textContent = 'Name must be at least 3 characters long.';
+      isValid = false;
+    } else {
+      nameError.textContent = '';
+    }
+
+    // Email validation
+    const email = document.getElementById('email').value;
+    const emailError = document.getElementById('emailError');
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      emailError.textContent = 'Please enter a valid email.';
+      isValid = false;
+    } else {
+      emailError.textContent = '';
+    }
+
+    // Phone number validation
+    const number = document.getElementById('number').value;
+    const numberError = document.getElementById('numberError');
+    if (number.length < 10 || isNaN(number)) {
+      numberError.textContent = 'Please enter a valid 10-digit phone number.';
+      isValid = false;
+    } else {
+      numberError.textContent = '';
+    }
+
+    // Password validation
+    const password = document.getElementById('password').value;
+    const passwordError = document.getElementById('passwordError');
+    if (password.length < 6) {
+      passwordError.textContent = 'Password must be at least 6 characters long.';
+      isValid = false;
+    } else {
+      passwordError.textContent = '';
+    }
+
+    // Confirm password validation
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    if (confirmPassword !== password) {
+      confirmPasswordError.textContent = 'Passwords do not match.';
+      isValid = false;
+    } else {
+      confirmPasswordError.textContent = '';
+    }
+
+    // If validation is successful, redirect to the sign-in page
+    if (isValid) {
+      window.location.href = 'sign-in.html'; // Replace with your sign-in page URL
+    }
+  }
+</script>
   </body>
 </html>
