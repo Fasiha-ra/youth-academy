@@ -1,5 +1,8 @@
+@import "../layouts/variables";
+
 .articles {
   margin: 30px 0;
+
   .container {
     .heading {
       // Center the heading and give it a max width
@@ -9,7 +12,7 @@
 
       // Styling for the h1 element
       h1 {
-        
+
         font-weight: 700; // Make the text bold
         color: #333; // Change text color
         margin: 20px 0; // Spacing above and below
@@ -45,9 +48,11 @@
       transition: transform 0.3s ease-in-out;
       cursor: pointer;
       flex-direction: column;
+
       @media (min-width: 768px) {
         flex-direction: row;
       }
+
       &:hover {
         .image-container img {
           transform: scale(1.1);
@@ -109,9 +114,11 @@
           display: flex;
           justify-content: space-between;
           width: 100%;
+
           span {
             display: block;
           }
+
           .author-name {
             font-weight: bold;
             font-size: 14px;
@@ -121,6 +128,159 @@
             font-size: 12px;
             color: gray;
           }
+        }
+      }
+    }
+  }
+}
+
+.articlesDetail {
+
+  .card {
+    position: relative;
+    margin-bottom: 50px;
+
+    .image-container {
+      background-image: url("../images/articles/BG.jpg");
+      // background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: end;
+    }
+
+    .content {
+      color: $white;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+
+      .category {
+        color: $primary;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 150px;
+        border-radius: 20px;
+      }
+
+      .title {
+
+        font-size: 22px;
+        margin: 0 0 10px;
+        line-height: 26px;
+
+        @media (min-width:992px) {
+          font-size: 30px;
+          line-height: 34px;
+        }
+      }
+
+      .author {
+        display: flex;
+        align-items: center;
+
+        .author-image {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .author-info {
+          display: flex;
+          justify-content: start;
+          gap: 30px;
+          width: 100%;
+
+          span {
+            display: block;
+          }
+
+          .author-name {
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          .date {
+            font-size: 14px;
+            font-weight: bold;
+            // color: gray;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    margin-bottom: 50px;
+
+    .article-content {
+      margin-bottom: 30px;
+
+      .article-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin-top: 20px;
+        color: #333;
+      }
+
+      p {
+        margin-bottom: 15px;
+        line-height: 1.8;
+      }
+
+      ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    // Article Footer
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #ddd;
+flex-wrap: wrap;
+gap: 20px;
+
+      .tags {
+        a {
+          color: #0066cc;
+          margin-left: 5px;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .social-share {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .share-icon {
+          margin-left: 10px;
+          text-decoration: none;
+          font-size: 0.9rem;
+        
+
+          
         }
       }
     }

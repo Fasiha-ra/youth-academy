@@ -1,36 +1,46 @@
 @import "../layouts/variables";
+
 .store {
-    // Container styling
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh; // Center vertically in viewport
-      text-align: center;
-  
-      h1 {
-        font-size: 100px; // Set font size to 100px
-        color: $primary; // Change text color to a bright orange-red
-  font-weight: bold;
-        // Add double text shadow with color change
-        text-shadow: 
-          2px 2px 3px rgba(0, 0, 0, 0.7),  // First shadow (darker)
-          4px 4px 5px rgba(255, 87, 51, 0.5);  // Second shadow (lighter orange-red)
-  
-        animation: fadeIn 4s ease-in-out; // Increased animation duration to 4s
-  
-        // Animation keyframes
-        @keyframes fadeIn {
-          0% {
-            opacity: 0; // Start invisible
-            transform: translateY(-20px); // Start from above
-          }
-          100% {
-            opacity: 1; // Fully visible
-            transform: translateY(0); // End at original position
-          }
+
+  // Container styling
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+
+    h1 {
+      font-size: 50px;
+      color: $primary;
+      font-weight: bold;
+      line-height: 54px;
+      text-shadow:
+        2px 2px 3px rgba(0, 0, 0, 0.7),
+        4px 4px 5px rgba(255, 87, 51, 0.5);
+      animation: fadeIn 4s ease-in-out;
+      @media (min-width:576px) {
+        font-size: 70px;
+        line-height: 74px;
+      }
+
+      @media (min-width:768px) {
+        font-size: 100px;
+        line-height: 104px;
+      }
+
+      // Animation keyframes
+      @keyframes fadeIn {
+        0% {
+          opacity: 0; // Start invisible
+          transform: translateY(-20px); // Start from above
+        }
+
+        100% {
+          opacity: 1; // Fully visible
+          transform: translateY(0); // End at original position
         }
       }
     }
   }
-  
+}

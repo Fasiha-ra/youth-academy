@@ -1,11 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>fffffff</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Youth Academy</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="discount">
+        <div class="container">
+          <strong>Get upto 70% Discount Today </strong>
+          <div class="clock">
+            <span class="hours time" id="hours"></span>
+            <span class="minutes time" id="minutes"></span>
+            <span class="seconds time" id="seconds"></span>
+          </div>
+          <button>Grab Now</button>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="container">
+          <div class="logo">
+            <img src="/images/header/logo.png" alt="logo" />
+          </div>
+          <div class="number">
+            <div class="whatsapp number">
+              <a href="https://wa.me/123456789" target="_blank">
+                <img src="/images/header/whatsapp.svg" alt="whatsapp" />
+                123456789
+              </a>
+            </div>
+            <div class="num number">
+              <a href="tel:123456789">
+                <img src="/images/header/phone.svg" alt="phone" />
+                123456789
+              </a>
+            </div>
+          </div>
+          <div class="login">
+            <a href="/partials/sign-up.html"
+              ><button class="btn">Sign up</button></a
+            >
+            <a href="/partials/sign-in.html"
+              ><button class="secondary">Sign in</button></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="container">
+          <nav>
+            <button class="burger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="menu-items">
+              <li>
+                <a href="/index.html" id="home">Home</a>
+              </li>
+              <li>
+                <a href="/partials/about.html" id="about">About</a>
+              </li>
+              <li>
+                <a href="/partials/course.html" id="course">Course</a>
+              </li>
+              <li>
+                <a href="/partials/ya-store.html" id="YAStore(books)"
+                  >YA Store (books)</a
+                >
+              </li>
+              <li>
+                <a href="/partials/articles.html" id="Articles">Articles</a>
+              </li>
+              <li>
+                <a href="/partials/contact.html" id="contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="articlesDetail">
+      <div class="card">
+        <div class="image-container">
+          <div class="content">
+            <div class="category">9th Standard</div>
+            <h2 class="title">How many times can you give 9th in Pakistan?</h2>
+
+            <div class="author">
+              <img
+                src="/images/hero/icon.enc"
+                alt="Author"
+                class="author-image"
+              />
+              <div class="author-info">
+                <span class="author-name">Azka Anwar</span>
+                <span class="date">October 7, 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <article class="article-content">
+          
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            ac vehicula ex. Curabitur nec purus ut nulla ultrices accumsan.
+            Aliquam erat volutpat. Proin quis nibh nec justo vulputate iaculis.
+            Praesent sit amet leo augue.
+          </p>
+
+          <p>
+            Nulla facilisi. Donec posuere, erat at malesuada tincidunt, dolor
+            lectus posuere mi, nec finibus mauris lorem sed nisi. Cras consequat
+            ex nec tellus gravida efficitur. Sed quis nibh et eros vulputate
+            luctus. Integer ultricies orci ut justo dictum, vitae viverra tortor
+            facilisis.
+          </p>
+
+          <h2>Key Points in Web Development</h2>
+          <ul>
+            <li>HTML is used to structure content on the web.</li>
+            <li>CSS styles the visual presentation.</li>
+            <li>JavaScript adds interactivity to the web.</li>
+          </ul>
+
+          <p>
+            Nam sollicitudin, massa vitae tincidunt sollicitudin, nisi sem
+            interdum mi, vel bibendum arcu lacus nec metus. Integer tempor lacus
+            et velit cursus, ac faucibus orci luctus. Etiam nec turpis et erat
+            malesuada dictum.
+          </p>
+        </article>
+
+        <!-- Article Footer Section -->
+        <footer class="article-footer">
+          <div class="tags">
+            <span>Tags:</span>
+            <a href="#">Web Development</a>, <a href="#">HTML</a>,
+            <a href="#">CSS</a>
+          </div>
+          <div class="social-share">
+            <span>Share this article:</span>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section logo-section">
+          <img src="/images/header/logo.png" alt="Logo" />
+          <p>
+            The premium one-stop online learning platform for students all
+            around the globe!
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="#">SAT</a></li>
+            <li><a href="#">ECAT</a></li>
+            <li><a href="#">MDCAT</a></li>
+            <li><a href="#">BCAT</a></li>
+            <li><a href="#">IX-X</a></li>
+            <li><a href="#">XI-XII</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Other Links</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Get App</h4>
+          <div class="app-links">
+            <a href="#"
+              ><img src="/images/footer/googlePlay.svg" alt="Google Play"
+            /></a>
+            <a href="#"
+              ><img src="/images/footer/appStore.svg" alt="App Store"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <div class="contact">
+          <div class="flex">
+            <i class="fas fa-phone"></i>
+            <p>Call Us</p>
+          </div>
+          <a href="tel+:123456789">123456789</a>
+        </div>
+        <div class="contact">
+          <div class="flex">
+            <i class="fas fa-envelope"></i>
+            <p>Email Us</p>
+          </div>
+          <p>info@youthacademy.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          Copyright <span id="showyear"></span> Youth Academy - All Rights
+          Reserved
+        </p>
+      </div>
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
 </html>

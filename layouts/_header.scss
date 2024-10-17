@@ -99,6 +99,9 @@ header {
         }
         a {
           color: $white;
+          &:hover{
+            color: $primary;
+          }
         }
         button {
           min-width: 100px !important;
