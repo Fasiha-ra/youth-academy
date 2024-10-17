@@ -362,6 +362,7 @@ header .menu .container nav .menu-items li a {
 }
 
 .rating {
+  overflow: hidden;
   margin-bottom: 40px;
 }
 @media (min-width: 992px) {

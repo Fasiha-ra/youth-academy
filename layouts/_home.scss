@@ -156,6 +156,7 @@
   }
 }
 .rating {
+  overflow: hidden;
   margin-bottom: 40px;
   @media (min-width: 992px) {
     margin-bottom: 60px;
