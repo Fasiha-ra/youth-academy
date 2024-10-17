@@ -89,6 +89,18 @@
 
        
       }
+      .subTitle{
+        display: block;
+        margin: 10px 0;
+        font-weight: bold;
+        font-size: 14px;
+        a{
+          transition: all .3s ease;
+          &:hover{
+            color: red;
+          }
+        }
+      }
     }
   }
 }

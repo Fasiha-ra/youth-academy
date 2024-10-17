@@ -668,6 +668,56 @@ footer .footer-bottom {
 }
 .about .team {
   background-color: #ddd;
+  padding: 40px 0;
+  text-align: center;
+}
+.about .team .container h2 {
+  margin-bottom: 30px;
+}
+.about .team .teamWrap {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+@media (min-width: 576px) {
+  .about .team .teamWrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .about .team .teamWrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .about .team .teamWrap {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.about .team .teamWrap .teacher {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.about .team .teamWrap .teacher .imgWrap {
+  width: 100%;
+  max-width: 200px;
+  min-height: 200px;
+  margin: 0 auto 20px;
+  border: 4px solid #070052;
+  border-radius: 50%;
+  padding: 20px;
+}
+.about .team .teamWrap .teacher .imgWrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.about .team .teamWrap .teacher .text h4 {
+  color: green;
+}
+.about .team .teamWrap .teacher:nth-child(even) .imgWrap {
+  border-color: #FFB800;
 }
 
 .signup {
@@ -747,6 +797,18 @@ footer .footer-bottom {
   border: none;
   outline: none;
   box-shadow: 1px 3px 4px 1px rgba(21, 7, 73, 0.1);
+}
+.signup .container form .subTitle {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+.signup .container form .subTitle a {
+  transition: all 0.3s ease;
+}
+.signup .container form .subTitle a:hover {
+  color: red;
 }
 
 .store .container {
@@ -1013,6 +1075,164 @@ footer .footer-bottom {
   font-size: 0.9rem;
 }
 
+.signin {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+}
+@media (min-width: 992px) {
+  .signin {
+    height: 100vh;
+    padding: 0;
+  }
+}
+.signin .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .signin .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+.signin .container .logoWrap {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease-in-out;
+  display: none;
+}
+.signin .container .logoWrap img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto;
+}
+.signin .container .logoWrap h2 {
+  color: #fff;
+  font-weight: 900;
+  font-style: italic;
+  margin-top: 20px;
+}
+@media (min-width: 992px) {
+  .signin .container .logoWrap {
+    display: block;
+  }
+}
+.signin .container .formWrap {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+@media (min-width: 992px) {
+  .signin .container .formWrap {
+    width: 100%;
+  }
+}
+.signin .container .formWrap .log {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+}
+@media (min-width: 992px) {
+  .signin .container .formWrap .log {
+    display: none;
+  }
+}
+.signin .container .formWrap h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+.signin .container .formWrap .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.signin .container .formWrap .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.signin .container .formWrap .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.signin .container .formWrap .btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #070052;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.signin .container .formWrap .btn:hover {
+  background-color: #03001f;
+}
+.signin .container .formWrap .subTitle {
+  margin-top: 10px;
+  font-size: 14px;
+  display: block;
+}
+.signin .container .formWrap .subTitle a {
+  color: #070052;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.signin .container .formWrap .subTitle a:hover {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 html {
   margin: 0;
   padding: 0;

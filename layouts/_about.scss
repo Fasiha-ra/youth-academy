@@ -1,48 +1,116 @@
 @import "../layouts/variables";
-.about{
+
+.about {
     margin: 50px 0;
-    .container{
-        .aboutUs{
+
+    .container {
+        .aboutUs {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 30px;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 40px;
-            @media (min-width:992px){
+
+            @media (min-width:992px) {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .textWrap{
-                h1{
+
+            .textWrap {
+                h1 {
                     font-weight: 900;
                     color: $primary;
                 }
-                p{
+
+                p {
                     margin-bottom: 30px;
                     line-height: 30px;
                 }
             }
-            .imgHolder{
+
+            .imgHolder {
                 margin: 0 auto;
-               img{
-                border-radius: 20px;
-                
-               }
+
+                img {
+                    border-radius: 20px;
+
+                }
             }
         }
-        .vision{
+
+        .vision {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            @media (min-width:992px){
+
+            @media (min-width:992px) {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             margin-bottom: 40px;
-            h2{
+
+            h2 {
                 color: $primary;
             }
         }
     }
-    .team{
+
+    .team {
         background-color: #ddd;
+        padding: 40px 0;
+        text-align: center;
+
+        .container {
+            h2 {
+                margin-bottom: 30px;
+            }
+        }
+
+        .teamWrap {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+          
+            @media (min-width:576px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media (min-width:768px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media (min-width:992px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .teacher {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+                .imgWrap {
+                    width: 100%;
+                    max-width: 200px;
+                    min-height: 200px;
+                    margin: 0 auto 20px;
+                    border: 4px solid $primary;
+                    border-radius: 50%;
+                    padding: 20px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        border-radius: 50%;
+                    }
+                }
+
+                .text {
+                    h4 {
+                        color: green;
+                    }
+                }
+                &:nth-child(even) {
+                    .imgWrap {
+                      border-color: $secondary; 
+                    }
+                  }
+            }
+        }
+
     }
 }
