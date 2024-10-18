@@ -10,7 +10,7 @@
       width: 100%;
       // height: auto;
       object-fit: fill;
-      height: 150px;
+      height: 100px;
       @media (min-width: 768px) {
         height: 300px;
       }
@@ -119,6 +119,8 @@
   }
   .slide {
     padding-bottom: 30px;
+    // background-color: green;
+    margin: 0 10px;
   }
   .slider-container {
     width: 80%;
@@ -127,10 +129,11 @@
 
   .slick-slide {
     text-align: center;
-    padding: 20px;
+    // padding: 20px;
     transition: transform 0.5s ease;
     opacity: 0.6;
     img {
+      margin: 0 auto;
       width: 100%;
       max-width: 327px;
       min-height: 320px;

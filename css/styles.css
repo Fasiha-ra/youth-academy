@@ -213,7 +213,7 @@ header .menu .container nav .menu-items li a {
   width: 100%;
   -o-object-fit: fill;
      object-fit: fill;
-  height: 150px;
+  height: 100px;
 }
 @media (min-width: 768px) {
   .hero .sliders img {
@@ -325,6 +325,7 @@ header .menu .container nav .menu-items li a {
 }
 .category .slide {
   padding-bottom: 30px;
+  margin: 0 10px;
 }
 .category .slider-container {
   width: 80%;
@@ -332,11 +333,11 @@ header .menu .container nav .menu-items li a {
 }
 .category .slick-slide {
   text-align: center;
-  padding: 20px;
   transition: transform 0.5s ease;
   opacity: 0.6;
 }
 .category .slick-slide img {
+  margin: 0 auto;
   width: 100%;
   max-width: 327px;
   min-height: 320px;

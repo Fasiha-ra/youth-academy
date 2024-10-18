@@ -13,7 +13,7 @@ $(".sliders").slick({
     dots:true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
     responsive: [
@@ -62,7 +62,7 @@ $(".sliders").slick({
       centerMode: true,
       centerPadding: '60px',
       slidesToShow: 3,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2000,
       responsive: [
         {
@@ -116,7 +116,7 @@ $(".cardSlider").slick({
   dots:true,
   slidesToShow: 3,
   slidesToScroll: 1,
-  autoplay: false,
+  autoplay: true,
   autoplaySpeed: 2000,
   arrows: false,
   responsive: [
