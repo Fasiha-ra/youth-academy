@@ -39,6 +39,7 @@ header .discount span {
   text-align: center;
   font-size: 16px;
   line-height: 18px;
+  width: 40px;
 }
 header .discount button {
   min-width: 100px;
@@ -325,7 +326,20 @@ header .menu .container nav .menu-items li a {
 }
 .category .slide {
   padding-bottom: 30px;
+  border-radius: 8px;
   margin: 0 10px;
+}
+.category .slide .textWrap {
+  text-align: left;
+  padding: 10px;
+}
+.category .slide .textWrap button {
+  text-align: center !important;
+}
+@media (max-width: 992px) {
+  .category .slide .textWrap button {
+    width: 100%;
+  }
 }
 .category .slider-container {
   width: 80%;
@@ -339,6 +353,7 @@ header .menu .container nav .menu-items li a {
 .category .slick-slide img {
   margin: 0 auto;
   width: 100%;
+  height: auto;
   max-width: 327px;
   min-height: 320px;
   border-radius: 10px;
@@ -349,17 +364,31 @@ header .menu .container nav .menu-items li a {
   }
 }
 .category .slick-slide h2 {
-  font-size: 1.5rem;
+  font-size: 20px;
   margin-top: 10px;
 }
+@media (min-width: 992px) {
+  .category .slick-slide h2 {
+    font-size: 24px;
+  }
+}
 .category .slick-slide p {
-  font-size: 1rem;
+  font-size: 14px;
   color: #555;
+}
+@media (min-width: 992px) {
+  .category .slick-slide p {
+    font-size: 16px;
+  }
 }
 .category .slick-center {
   transform: scale(1.1);
   opacity: 1;
   padding-bottom: 30px;
+  margin: 0 10px;
+}
+.category .slick-center img {
+  border-radius: 20px;
 }
 
 .rating {
@@ -385,10 +414,16 @@ header .menu .container nav .menu-items li a {
 .rating .cards .card {
   margin: 5px 15px;
   width: 100%;
-  max-width: 370px;
+  max-width: 700px;
+  height: auto;
+  min-height: 312px;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0px 1px 11px 1px rgba(0, 0, 0, 0.2);
+}
+.rating .cards .card .heading p {
+  height: auto;
+  min-height: 180px;
 }
 .rating .cards .card .heading .textWrap {
   display: flex;

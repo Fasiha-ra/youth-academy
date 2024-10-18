@@ -8,24 +8,7 @@ burgerMenu.addEventListener('click', () => {
 menuItems.addEventListener("click",()=>{
   menuItems.classList.remove("active")
 })
-//home slider
-$(".sliders").slick({
-    dots:true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-         arrows:false
-        },
-      },
-     
-    ],
-  });
+
 //counter
   const counters = document.querySelectorAll('.count');
     
@@ -56,87 +39,37 @@ $(".sliders").slick({
       observer.observe(section);
   });
 
-//courses slider
-  $(document).ready(function(){
-    $('.slider').slick({
-      centerMode: true,
-      centerPadding: '60px',
-      slidesToShow: 3,
-      autoplay: false,
-      autoplaySpeed: 2000,
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '20px',
-            slidesToShow: 1
-          }
-        }
-      ]
-    });
-  });
 
 
   
 const date=new Date();
 const year=date.getFullYear();
-const hour= date.getHours();
-const min= date.getMinutes();
-const sec= date.getSeconds();
-document.getElementById("hours").innerHTML=`${hour}h`;
-document.getElementById("minutes").innerHTML=`${min}m`;
-document.getElementById("seconds").innerHTML=`${sec}s`;
 document.getElementById("showyear").innerHTML= `©${year}`;
+function updateTime() {
+  const now = new Date();
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1); // Next midnight
+  const timeDifference = midnight - now; // Time left until midnight
 
+  // Convert time difference to hours, minutes, and seconds
+  const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  // Update the HTML elements
+  document.getElementById("hours").innerHTML = hours + "h";
+  document.getElementById("minutes").innerHTML = minutes + "m";
+  document.getElementById("seconds").innerHTML = seconds + "s";
+}
+
+// Update the countdown every second
+setInterval(updateTime, 1000);
+
+// Initial call to display immediately
+updateTime();
 //contact form
 
 
-//rating
-$(".cardSlider").slick({
-  dots:true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  arrows: false,
-  responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-       arrows:false,
-       slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 576,
-      settings: {
-       arrows:false,
-       slidesToShow: 1,
-      },
-    },
-   
-  ],
-});
+
 //sign up
 function signUpForm() {
   const name = document.getElementById('name');
