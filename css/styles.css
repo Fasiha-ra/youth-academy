@@ -91,6 +91,18 @@ header .contact .container .login {
   display: flex;
   justify-content: center;
 }
+header .contact .container .login button {
+  min-width: 100px !important;
+  height: 42px;
+  margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+  header .contact .container .login button {
+    padding: 5px 8px;
+    min-width: 80px !important;
+    height: 36px;
+  }
+}
 header .contact .container .login .btn {
   border-radius: 25px 0 0 25px;
 }
@@ -102,15 +114,6 @@ header .contact .container .login a {
 }
 header .contact .container .login a:hover {
   color: #070052;
-}
-header .contact .container .login button {
-  min-width: 100px !important;
-}
-@media (max-width: 768px) {
-  header .contact .container .login button {
-    padding: 5px 8px;
-    min-width: 80px !important;
-  }
 }
 @media (max-width: 768px) {
   header .contact .number {

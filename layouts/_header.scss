@@ -93,6 +93,16 @@ header {
       .login {
         display: flex;
         justify-content: center;
+        button {
+          min-width: 100px !important;
+          height: 42px;
+          margin-bottom: 5px;
+          @media (max-width: 768px) {
+            padding: 5px 8px;
+            min-width: 80px !important;
+            height: 36px;
+          }
+        }
         .btn {
           border-radius: 25px 0 0 25px;
         }
@@ -105,13 +115,7 @@ header {
             color: $primary;
           }
         }
-        button {
-          min-width: 100px !important;
-          @media (max-width: 768px) {
-            padding: 5px 8px;
-            min-width: 80px !important;
-          }
-        }
+        
       }
     }
 
