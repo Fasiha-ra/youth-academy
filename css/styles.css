@@ -391,6 +391,75 @@ header .menu .container nav .menu-items li a {
   border-radius: 20px;
 }
 
+.team {
+  background-color: #ddd;
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+.team .container h2 {
+  margin-bottom: 30px;
+}
+.team .teamWrap {
+  gap: 20px;
+}
+.team .teamWrap .teacher {
+  width: 100%;
+  max-width: 350px;
+  height: 200px;
+  margin: 0 15px 30px;
+  background-color: #fff;
+  box-shadow: 2px 2px 24px -1px rgba(0, 0, 0, 0.3);
+  padding: 20px 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.team .teamWrap .teacher:hover {
+  background-color: #070052;
+  color: #fff;
+}
+.team .teamWrap .teacher:hover .teacher-name {
+  color: #fff;
+}
+.team .teamWrap .teacher:hover .teacher-details strong {
+  color: #fff;
+}
+.team .teamWrap .teacher:hover::after {
+  background-color: #fff;
+}
+.team .teamWrap .teacher:after {
+  content: "";
+  position: absolute;
+  background-color: #070052;
+  overflow: hidden;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  right: 0;
+  bottom: 0;
+  border-radius: 100% 0 0 0;
+}
+.team .teamWrap .teacher .teacher-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.team .teamWrap .teacher .teacher-details {
+  text-align: left;
+  padding: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+.team .teamWrap .teacher .teacher-details li {
+  margin-bottom: 8px;
+}
+.team .teamWrap .teacher .teacher-details strong {
+  color: #555;
+  font-weight: 900;
+}
+
 .rating {
   overflow: hidden;
   margin-bottom: 40px;
@@ -444,6 +513,123 @@ header .menu .container nav .menu-items li a {
   display: flex;
 }
 
+/* CSS variables */
+:root {
+  --primary-text: #4f8f70;
+  --secondary-text: #e9fff3;
+  --white-text-white: #ffffff;
+  --black-text-black: #000000;
+}
+
+/* custom font */
+/* @font-face {
+  font-family: "Avenir";
+  src: url("../assets/font/AvenirLight.woff2") format("woff2"),
+    url("../assets/font/AvenirLight.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white-text-white);
+  color: var(--black-text-black);
+  font-family: sans-serif;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--secondary-text);
+  border-radius: 100px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-text);
+  border-radius: 100px;
+}
+
+.faq-section .accordion {
+  width: 100%;
+}
+.faq-section .accordion-button:not(.collapsed) {
+  background-color: var(--secondary-text);
+}
+.faq-section .accordion-button:not(.collapsed)::after {
+  background-image: none;
+  transform: none;
+}
+.faq-section .accordion-button:focus {
+  box-shadow: none;
+}
+.faq-section .accordion-button:before {
+  content: "";
+  position: absolute;
+  right: 0.75rem;
+  top: 1.25rem;
+  height: 2px;
+  width: 1rem;
+  background-color: var(--primary-text);
+}
+.faq-section .accordion-button.collapsed:after {
+  content: "";
+  position: absolute;
+  right: 1.1875rem;
+  top: 0.8125rem;
+  height: 1.0625rem;
+  width: 0.125rem;
+  border-style: none;
+  background-color: var(--primary-text);
+}
+.faq-section .accordion-button h5 {
+  color: var(--primary-text);
+  margin-right: 13px;
+}
+.faq-section .accordion-body {
+  background-color: var(--secondary-text);
+}
+.faq-section .accordion-body ul {
+  list-style-type: none;
+}
+.faq-section .accordion-body ul.default {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+.faq-section .accordion-body ul li {
+  margin-bottom: 5px;
+}
+.faq-section .accordion-body ol {
+  counter-reset: step-counter;
+  list-style-type: none;
+  padding-left: 0;
+}
+.faq-section .accordion-body ol > li {
+  counter-increment: step-counter;
+  margin-bottom: 10px;
+}
+.faq-section .accordion-body ol > li::before {
+  content: "Steps " counter(step-counter) ": ";
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .faq-section .accordion {
+    margin: 0 auto;
+  }
+  .faq-section .accordion-button:before {
+    right: 0.75rem;
+  }
+  .faq-section .accordion-button.collapsed:after {
+    right: 1.1875rem;
+  }
+  .faq-section .accordion-button h5 {
+    margin-right: 0px;
+  }
+}
 footer {
   background-color: #070052;
   color: #fff;
@@ -728,33 +914,62 @@ footer .footer-bottom {
 }
 @media (min-width: 992px) {
   .about .team .teamWrap {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .about .team .teamWrap .teacher {
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 24px -1px rgba(0, 0, 0, 0.3);
+  padding: 20px 10px;
+  position: relative;
+  transition: all 0.3s ease;
 }
-.about .team .teamWrap .teacher .imgWrap {
-  width: 100%;
-  max-width: 200px;
-  min-height: 200px;
-  margin: 0 auto 20px;
-  border: 4px solid #070052;
-  border-radius: 50%;
-  padding: 20px;
+.about .team .teamWrap .teacher:hover {
+  background-color: #070052;
+  color: #fff;
 }
-.about .team .teamWrap .teacher .imgWrap img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
+.about .team .teamWrap .teacher:hover .teacher-name {
+  color: #fff;
 }
-.about .team .teamWrap .teacher .text h4 {
-  color: green;
+.about .team .teamWrap .teacher:hover .teacher-details strong {
+  color: #fff;
 }
-.about .team .teamWrap .teacher:nth-child(even) .imgWrap {
-  border-color: #FFB800;
+.about .team .teamWrap .teacher:hover::after {
+  background-color: #fff;
+}
+.about .team .teamWrap .teacher:after {
+  content: "";
+  position: absolute;
+  background-color: #070052;
+  overflow: hidden;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  right: 0;
+  bottom: 0;
+  border-radius: 100% 0 0 0;
+}
+.about .team .teamWrap .teacher .teacher-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.about .team .teamWrap .teacher .teacher-details {
+  text-align: left;
+  padding: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+.about .team .teamWrap .teacher .teacher-details li {
+  margin-bottom: 8px;
+}
+.about .team .teamWrap .teacher .teacher-details strong {
+  color: #555;
+  font-weight: 900;
 }
 
 .signup {

@@ -24,6 +24,32 @@ $(".cardSlider").slick({
      
     ],
   });
+  //team
+  $(".teamSlider").slick({
+    dots:true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+         arrows:false,
+         slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+         arrows:false,
+         slidesToShow: 1,
+        },
+      },
+     
+    ],
+  });
   //courses slider
   $(document).ready(function(){
     $('.slider').slick({

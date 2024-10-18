@@ -1,20 +1,26 @@
 @import "../layouts/variables";
+
 .hero {
   margin-bottom: 30px;
+
   @media (min-width: 992px) {
     margin-bottom: 50px;
   }
+
   .sliders {
     cursor: grab;
+
     img {
       width: 100%;
       // height: auto;
       object-fit: fill;
       height: 100px;
+
       @media (min-width: 768px) {
         height: 300px;
       }
     }
+
     .slick-dots {
       li {
         button {
@@ -24,6 +30,7 @@
     }
   }
 }
+
 .counter-section {
   display: flex;
   justify-content: space-around;
@@ -32,9 +39,11 @@
   margin-bottom: 30px;
   flex-wrap: wrap;
   gap: 15px;
+
   @media (min-width: 992px) {
     margin-bottom: 50px;
   }
+
   .counter {
     text-align: center;
 
@@ -44,19 +53,23 @@
       font-weight: bold;
       color: #111;
       display: block;
+
       @media (min-width: 992px) {
         font-size: 36px;
         line-height: 40px;
       }
     }
+
     strong {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .inc {
       font-size: 30px;
     }
+
     p {
       font-size: 14px;
       color: #555;
@@ -70,11 +83,14 @@
   //     gap: 20px;
   // }
 }
+
 .detail {
   margin-bottom: 30px;
+
   @media (min-width: 992px) {
     margin-bottom: 50px;
   }
+
   .videoHolder {
     background-color: $white;
     display: flex;
@@ -84,57 +100,69 @@
     gap: 15px;
     padding: 20px;
     box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.1);
+
     @media (min-width: 992px) {
       justify-content: space-between;
       flex-direction: row;
     }
+
     .videoWrap {
       iframe {
         width: 100%;
         max-width: 460px;
         height: 315px;
+
         @media (min-width: 600px) {
           width: 560px;
         }
       }
     }
+
     .textWrap {
       max-width: 500px;
+
       h1 {
         color: $primary;
       }
     }
   }
 }
+
 .category {
   background-color: #f9f8ff;
   padding: 20px 0;
   margin-bottom: 30px;
   text-align: center;
+
   @media (min-width: 992px) {
     margin-bottom: 50px;
   }
+
   .heading {
     margin-bottom: 40px;
   }
+
   .slide {
     padding-bottom: 30px;
     // background-color: white; 
     // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
     border-radius: 8px;
     margin: 0 10px;
-    .textWrap{
+
+    .textWrap {
       text-align: left;
       padding: 10px;
-      button{
+
+      button {
         text-align: center !important;
-       
-        @media (max-width:992px){
+
+        @media (max-width:992px) {
           width: 100%;
         }
       }
     }
   }
+
   .slider-container {
     width: 80%;
     margin: 50px auto;
@@ -145,6 +173,7 @@
     // padding: 20px;
     transition: transform 0.5s ease;
     opacity: 0.6;
+
     img {
       margin: 0 auto;
       width: 100%;
@@ -152,21 +181,26 @@
       max-width: 327px;
       min-height: 320px;
       border-radius: 10px;
+
       @media (min-width: 992px) {
         min-height: 443px;
       }
     }
+
     h2 {
       font-size: 20px;
       margin-top: 10px;
-      @media (min-width:992px){
+
+      @media (min-width:992px) {
         font-size: 24px;
       }
     }
+
     p {
       font-size: 14px;
       color: #555;
-      @media (min-width:992px){
+
+      @media (min-width:992px) {
         font-size: 16px;
       }
     }
@@ -177,20 +211,116 @@
     opacity: 1;
     padding-bottom: 30px;
     margin: 0 10px;
-    img{
+
+    img {
       border-radius: 20px;
     }
   }
 }
+
+.team {
+  background-color: #ddd;
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: 40px;
+  overflow: hidden;
+  .container {
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  .teamWrap {
+    gap: 20px;
+
+    
+
+    .teacher {
+      width: 100%;
+      max-width: 350px;
+      height: 200px;
+      margin: 0 15px 30px;
+      background-color: $white;
+      box-shadow: 2px 2px 24px -1px rgba(0, 0, 0, 0.3);
+      padding: 20px 10px;
+      position: relative;
+      transition: all .3s ease;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+
+        .teacher-name {
+          color: $white;
+        }
+
+        .teacher-details {
+          strong {
+            color: $white;
+          }
+        }
+
+        &::after {
+          background-color: $white;
+        }
+
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: $primary;
+        overflow: hidden;
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+        right: 0;
+        bottom: 0;
+        border-radius: 100% 0 0 0;
+      }
+
+      .teacher-name {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .teacher-details {
+        text-align: left;
+        padding: 0;
+        font-size: 16px;
+        line-height: 20px;
+
+        li {
+          margin-bottom: 8px;
+        }
+
+        strong {
+          color: #555;
+          font-weight: 900;
+        }
+      }
+
+
+
+    }
+  }
+
+}
+
 .rating {
   overflow: hidden;
   margin-bottom: 40px;
+
   @media (min-width: 992px) {
     margin-bottom: 60px;
   }
+
   .text {
     text-align: center;
     margin-bottom: 30px;
+
     .para {
       display: flex;
       justify-content: center;
@@ -199,9 +329,10 @@
       margin: 0 auto;
     }
   }
+
   .cards {
     .card {
-        margin: 5px 15px;
+      margin: 5px 15px;
       width: 100%;
       max-width: 700px;
       height: auto;
@@ -209,30 +340,182 @@
       padding: 20px;
       background-color: $white;
       box-shadow: 0px 1px 11px 1px rgba(0, 0, 0, 0.2);
-      .heading{
-        p{
+
+      .heading {
+        p {
           height: auto;
           min-height: 180px;
         }
-        .textWrap{
-            display: flex;
-            gap: 5px;
+
+        .textWrap {
+          display: flex;
+          gap: 5px;
         }
       }
+
       .iconsWrap {
         display: flex;
         align-items: center;
         gap: 10px;
+
         img {
           width: 100%;
           max-width: 40px;
           min-height: 40px;
           border-radius: 50%;
         }
-        strong{
-            display: flex;
+
+        strong {
+          display: flex;
         }
       }
     }
   }
 }
+/* CSS variables */
+:root {
+  --primary-text: #4f8f70;
+  --secondary-text: #e9fff3;
+  --white-text-white: #ffffff;
+  --black-text-black: #000000;
+}
+/* custom font */
+/* @font-face {
+  font-family: "Avenir";
+  src: url("../assets/font/AvenirLight.woff2") format("woff2"),
+    url("../assets/font/AvenirLight.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white-text-white);
+  color: var(--black-text-black);
+  font-family: sans-serif;
+  overflow-y: scroll; // Custom scrollbar
+
+  &::-webkit-scrollbar {
+    width: 8px;
+
+    &-track {
+      background-color: var(--secondary-text);
+      border-radius: 100px;
+    }
+
+    &-thumb {
+      background-color: var(--primary-text);
+      border-radius: 100px;
+    }
+  }
+}
+
+.faq-section {
+  .accordion {
+    width: 100%;
+  }
+
+  .accordion-button {
+    &:not(.collapsed) {
+      background-color: var(--secondary-text);
+    }
+
+    &:not(.collapsed)::after {
+      background-image: none;
+      transform: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: 0.75rem;
+      top: 1.25rem;
+      height: 2px;
+      width: 1rem;
+      background-color: var(--primary-text);
+    }
+
+    &.collapsed:after {
+      content: "";
+      position: absolute;
+      right: 1.1875rem;
+      top: 0.8125rem;
+      height: 1.0625rem;
+      width: 0.125rem;
+      border-style: none;
+      background-color: var(--primary-text);
+    }
+
+    h5 {
+      color: var(--primary-text);
+      margin-right: 13px;
+    }
+  }
+
+  .accordion-body {
+    background-color: var(--secondary-text);
+
+    // List styles
+    ul {
+      list-style-type: none;
+
+      &.default {
+        list-style-type: disc; // Default bullet points for ul
+        margin-left: 20px;
+      }
+      
+      li {
+        margin-bottom: 5px;
+      }
+    }
+
+    ol {
+      counter-reset: step-counter;
+      list-style-type: none;
+      padding-left: 0;
+
+      > li {
+        counter-increment: step-counter; // Increment custom counter
+        margin-bottom: 10px;
+
+        &::before {
+          content: "Steps " counter(step-counter) ": "; // Custom prefix
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Media queries for responsiveness
+@media screen and (min-width: 768px) {
+  .faq-section {
+    .accordion {
+      // width: 50%; // Optional: Uncomment if needed
+      margin: 0 auto; // Centering
+    }
+
+    .accordion-button:before {
+      right: 0.75rem;
+    }
+
+    .accordion-button.collapsed:after {
+      right: 1.1875rem;
+    }
+
+    .accordion-button h5 {
+      margin-right: 0px;
+    }
+  }
+}
+
+
