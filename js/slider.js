@@ -108,23 +108,33 @@ $("#myModal").on("shown.bs.modal", function () {
   $("#myInput").trigger("focus");
 });
 
-//aroojbatch show on click event
 const batch = document.getElementById("aroojBatch");
 batch.style.display = "none"; // Initially hidden
+
 const modal = document.getElementById("exampleModalCenter"); // Modal element
 const closeButton = document.getElementById("close");
 const data = document.getElementById("text"); // Element to trigger display change
 
 // Add a click event listener to the text element
 data.addEventListener("click", function () {
-  batch.style.display = "block"; // Show the Arooj Batch
-  modal.style.display = "none"; // Hide the modal by setting display to none
+  // Show the Arooj Batch
+  batch.style.display = "block";
+
+  // Hide the modal by setting display to none
+  modal.style.display = "none";
   modal.classList.remove("show"); // Remove Bootstrap modal class
   document.body.classList.remove("modal-open"); // Remove modal-open class from body
+
   const backdrop = document.querySelector(".modal-backdrop");
   if (backdrop) {
     backdrop.remove(); // Remove the modal backdrop
   }
+
+  // Scroll to the Arooj Batch section
+  batch.scrollIntoView({
+    behavior: "smooth", // Optional: Adds smooth scrolling
+    block: "start" // Align to the top of the section
+  });
 });
 
 // Close button event listener (optional, to close the modal when clicking close button)
@@ -132,6 +142,7 @@ closeButton.addEventListener("click", function () {
   modal.style.display = "none"; // Hide the modal
   modal.classList.remove("show"); // Remove Bootstrap modal class
   document.body.classList.remove("modal-open"); // Remove modal-open class from body
+
   const backdrop = document.querySelector(".modal-backdrop");
   if (backdrop) {
     backdrop.remove(); // Remove the modal backdrop
