@@ -107,66 +107,33 @@ $(".sliders").slick({
 $("#myModal").on("shown.bs.modal", function () {
   $("#myInput").trigger("focus");
 });
-const faqItems = document.querySelectorAll(".faq-item");
 
-faqItems.forEach((item) => {
-  const radioButton = item.querySelector('input[type="radio"]');
-
-  radioButton.addEventListener("change", () => {
-    // Remove active class from all items
-    faqItems.forEach((i) => {
-      i.classList.remove("active");
-      i.querySelector(".faq-answer").style.display = "none"; // Hide all answers
-    });
-
-    // Add active class to the selected item
-    item.classList.add("active");
-    item.querySelector(".faq-answer").style.display = "block"; 
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const faqItems = document.querySelectorAll('.faq-item');
-  const faqImage = document.getElementById('faq-images');
-  const images = {
-      'daily-live-sessions': '/images/hero/feature1.webp',
-      'recorded-lectures': '/images/hero/feature2.webp',
-      'study-notes': '/images/hero/feature3.webp',
-      'teacher-support': '/images/hero/feature4.webp',
-      'test-sessions': '/images/hero/feature5.webp',
-      'syllabus-planning': '/images/hero/feature6.webp'
-  };
-
-  faqItems.forEach(item => {
-      const radio = item.querySelector('input[type="radio"]');
-
-      radio.addEventListener('change', () => {
-          faqItems.forEach(i => i.classList.remove('active'));
-          item.classList.add('active');
-          faqImage.src = images[radio.value]; // Change the image based on selected FAQ
-      });
-  });
-});
 //aroojbatch show on click event
 const batch = document.getElementById("aroojBatch");
-batch.style.display = "none";
+batch.style.display = "none"; // Initially hidden
+const modal = document.getElementById("exampleModalCenter"); // Modal element
 const closeButton = document.getElementById("close");
-// Get the element that will trigger the display change
-const data = document.getElementById("btn-secondary");
+const data = document.getElementById("text"); // Element to trigger display change
 
-// Add a click event listener to the element
-data.addEventListener("click", function() {
-  closeButton.style.display = "none";
-    // Change the display style of aroojBatch to "block" when the element is clicked
-    batch.style.display = "block";
-
+// Add a click event listener to the text element
+data.addEventListener("click", function () {
+  batch.style.display = "block"; // Show the Arooj Batch
+  modal.style.display = "none"; // Hide the modal by setting display to none
+  modal.classList.remove("show"); // Remove Bootstrap modal class
+  document.body.classList.remove("modal-open"); // Remove modal-open class from body
+  const backdrop = document.querySelector(".modal-backdrop");
+  if (backdrop) {
+    backdrop.remove(); // Remove the modal backdrop
+  }
 });
-closeButton.addEventListener("click", function() {
+
+// Close button event listener (optional, to close the modal when clicking close button)
+closeButton.addEventListener("click", function () {
   modal.style.display = "none"; // Hide the modal
+  modal.classList.remove("show"); // Remove Bootstrap modal class
+  document.body.classList.remove("modal-open"); // Remove modal-open class from body
+  const backdrop = document.querySelector(".modal-backdrop");
+  if (backdrop) {
+    backdrop.remove(); // Remove the modal backdrop
+  }
 });
-
-// Optional: Close the modal when clicking outside the modal content
-// window.addEventListener("click", function(event) {
-//   if (event.target === modal) {
-//       modal.style.display = "none"; // Hide the modal
-//   }
-// });

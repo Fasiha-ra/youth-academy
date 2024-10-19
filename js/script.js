@@ -183,3 +183,43 @@ questions.forEach(question => {
 
     });
 });
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const radioButton = item.querySelector('input[type="radio"]');
+
+  radioButton.addEventListener("change", () => {
+    // Remove active class from all items
+    faqItems.forEach((i) => {
+      i.classList.remove("active");
+      i.querySelector(".faq-answer").style.display = "none"; // Hide all answers
+    });
+
+    // Add active class to the selected item
+    item.classList.add("active");
+    item.querySelector(".faq-answer").style.display = "block";
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+  const faqImage = document.getElementById("faq-images");
+  const images = {
+    "daily-live-sessions": "/images/hero/feature1.webp",
+    "recorded-lectures": "/images/hero/feature2.webp",
+    "study-notes": "/images/hero/feature3.webp",
+    "teacher-support": "/images/hero/feature4.webp",
+    "test-sessions": "/images/hero/feature5.webp",
+    "syllabus-planning": "/images/hero/feature6.webp",
+  };
+
+  faqItems.forEach((item) => {
+    const radio = item.querySelector('input[type="radio"]');
+
+    radio.addEventListener("change", () => {
+      faqItems.forEach((i) => i.classList.remove("active"));
+      item.classList.add("active");
+      faqImage.src = images[radio.value]; // Change the image based on selected FAQ
+    });
+  });
+});

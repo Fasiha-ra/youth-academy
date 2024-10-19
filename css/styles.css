@@ -1633,6 +1633,54 @@ footer .footer-bottom {
     opacity: 1;
   }
 }
+.course .category {
+  background-color: #f9f8ff;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .course .category {
+    margin-bottom: 50px;
+  }
+}
+.course .category .heading {
+  margin-bottom: 40px;
+}
+.course .category .slider {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+@media (min-width: 576px) {
+  .course .category .slider {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .course .category .slider {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.course .category .slide {
+  padding-bottom: 30px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 0 10px;
+}
+.course .category .slide img {
+  width: 100%;
+  height: auto;
+}
+.course .category .slide .textWrap {
+  text-align: center;
+  padding: 10px;
+}
+.course .category .slide .textWrap p {
+  margin-bottom: 10px;
+}
+
 html {
   margin: 0;
   padding: 0;
