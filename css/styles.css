@@ -41,12 +41,21 @@ header .discount span {
   line-height: 18px;
   width: 40px;
 }
-header .discount button {
+header .discount .redbtn {
   min-width: 100px;
   padding: 5px 8px;
   border-radius: 0;
   color: #fff;
   background: linear-gradient(-45deg, #f5724a, #fe1313, #d13816, #ff4545);
+}
+header .discount .modal-title {
+  color: #000;
+}
+header .discount label {
+  color: #000;
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
 }
 header .contact {
   padding: 10px 0;

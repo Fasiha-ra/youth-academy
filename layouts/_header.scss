@@ -43,12 +43,21 @@ header {
    
     }
 
-    button {
+    .redbtn {
       min-width: 100px;
       padding: 5px 8px;
       border-radius: 0;
       color: $white;
       background: linear-gradient(-45deg, #f5724a, #fe1313, #d13816, #ff4545);
+    }
+    .modal-title{
+      color: #000;
+    }
+   label{
+      color: #000;
+      text-align: left;
+      display: block;
+      margin-bottom: 10px;
     }
   }
 

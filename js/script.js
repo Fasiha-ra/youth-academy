@@ -223,3 +223,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const submitButton = document.getElementById("submitButton");
+  const numberInput = document.getElementById("numberInput");
+  const numberForm = document.getElementById("numberForm");
+
+  submitButton.addEventListener("click", function () {
+      // Basic validation for phone number
+      const phoneRegex = /^[0-9]{11}$/; // Example: Only allow 10 digit phone numbers
+      if (numberInput.value === "" || !phoneRegex.test(numberInput.value)) {
+          numberInput.classList.add("is-invalid"); // Add invalid class
+      } else {
+          // Redirect to sign.html
+          window.location.href = "/partials/sign-in.html"; // Change to the desired page
+      }
+  });
+
+  // Remove the invalid class on input change
+  numberInput.addEventListener("input", function () {
+      if (numberInput.value !== "" && phoneRegex.test(numberInput.value)) {
+          numberInput.classList.remove("is-invalid"); // Remove invalid class
+      }
+  });
+});
