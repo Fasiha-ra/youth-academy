@@ -144,10 +144,9 @@
 
   .slide {
     padding-bottom: 30px;
-    // background-color: white; 
-    // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
     border-radius: 8px;
     margin: 0 10px;
+    cursor: pointer;
 
     .textWrap {
       text-align: left;
@@ -225,6 +224,18 @@
   margin-bottom: 40px;
   overflow: hidden;
 
+  .slick-next {
+    top: 44%;
+    &::before{
+background: white;
+color: $primary;
+box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+padding: 10px;
+border-radius: 50%;
+font-size: 30px;
+    }
+  }
+
   .container {
     h2 {
       margin-bottom: 30px;
@@ -281,9 +292,10 @@
       }
 
       .teacher-name {
-        font-size: 1.5em;
+        font-size: 20px;
+        line-height: 24px;
         font-weight: bold;
-        color: #333;
+        color: $primary;
         margin-bottom: 10px;
       }
 
@@ -561,6 +573,7 @@ body {
 
 .aroojBatch {
   margin-bottom: 40px;
+
   h2 {
     padding: 0 15px;
     text-align: center;
@@ -661,7 +674,7 @@ body {
 
         img {
           width: 100%;
-          max-width: 500px; 
+          max-width: 500px;
           margin: 0 auto;
         }
       }
@@ -684,9 +697,11 @@ body {
       }
     }
   }
-  .img-containers{
+
+  .img-containers {
     display: none;
-    @media (min-width:992px){
+
+    @media (min-width:992px) {
       display: block;
     }
   }

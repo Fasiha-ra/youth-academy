@@ -54,7 +54,7 @@
         }
     }
 
-    .team {
+    .teamHolder {
         background-color: #ddd;
         padding: 40px 0;
         text-align: center;
@@ -73,80 +73,36 @@
             @media (min-width:576px) {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            @media (min-width:768px) {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
             @media (min-width:992px) {
                 grid-template-columns: repeat(3, 1fr);
             }
-
-            .teacher {
-                width: 100%;
-                max-width: 350px;
-                margin: 0 auto;
-                background-color: $white;
-                box-shadow: 2px 2px 24px -1px rgba(0, 0, 0, 0.3);
-                padding: 20px 10px;
-                position: relative;
-                transition: all .3s ease;
-                &:hover {
-                    background-color: $primary;
-                    color: $white;
-                    .teacher-name {
-                        color: $white;
-                    }
-                    .teacher-details {
-                        strong {
-                            color: $white;
-                        }
-                    }
-                    &::after{
-                        background-color: $white;
-                    }
-
-                }
-
-                &:after {
-                    content: "";
-                    position: absolute;
-                    background-color: $primary;
-                    overflow: hidden;
-                    z-index: 1;
-                    width: 80px;
-                    height: 80px;
-                    right: 0;
-                    bottom: 0;
-                    border-radius: 100% 0 0 0;
-                }
-
-                .teacher-name {
-                    font-size: 1.5em;
-                    font-weight: bold;
-                    color: #333;
-                    margin-bottom: 10px;
-                }
-
-                .teacher-details {
-                    text-align: left;
-                    padding: 0;
-                    font-size: 16px;
-                    line-height: 20px;
-
-                    li {
-                        margin-bottom: 8px;
-                    }
-
-                    strong {
-                        color: #555;
-                        font-weight: 900;
-                    }
-                }
-
-
-
+.team{
+    .imgWrap{
+        width: 100%;
+        max-width: 200px;
+        height: 200px;
+        border: 3px solid $primary;
+        border-radius: 50%;
+        padding: 10px;
+        margin: 0 auto 20px;
+        img{
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+           
+        }
+    }
+    .textWrap{
+        h4{
+            font-style: italic;
+            color: $primary;
+            strong{
+                color: $secondary;
             }
+        }
+    }
+}
+            
         }
 
     }

@@ -340,6 +340,7 @@ header .menu .container nav .menu-items li a {
   padding-bottom: 30px;
   border-radius: 8px;
   margin: 0 10px;
+  cursor: pointer;
 }
 .category .slide .textWrap {
   text-align: left;
@@ -410,6 +411,17 @@ header .menu .container nav .menu-items li a {
   margin-bottom: 40px;
   overflow: hidden;
 }
+.team .slick-next {
+  top: 44%;
+}
+.team .slick-next::before {
+  background: white;
+  color: #070052;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 30px;
+}
 .team .container h2 {
   margin-bottom: 30px;
 }
@@ -453,9 +465,10 @@ header .menu .container nav .menu-items li a {
   border-radius: 100% 0 0 0;
 }
 .team .teamWrap .teacher .teacher-name {
-  font-size: 1.5em;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: bold;
-  color: #333;
+  color: #070052;
   margin-bottom: 10px;
 }
 .team .teamWrap .teacher .teacher-details {
@@ -1046,87 +1059,49 @@ footer .footer-bottom {
 .about .container .vision h2 {
   color: #070052;
 }
-.about .team {
+.about .teamHolder {
   background-color: #ddd;
   padding: 40px 0;
   text-align: center;
 }
-.about .team .container h2 {
+.about .teamHolder .container h2 {
   margin-bottom: 30px;
 }
-.about .team .teamWrap {
+.about .teamHolder .teamWrap {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
 }
 @media (min-width: 576px) {
-  .about .team .teamWrap {
+  .about .teamHolder .teamWrap {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 768px) {
-  .about .team .teamWrap {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 @media (min-width: 992px) {
-  .about .team .teamWrap {
+  .about .teamHolder .teamWrap {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.about .team .teamWrap .teacher {
+.about .teamHolder .teamWrap .team .imgWrap {
   width: 100%;
-  max-width: 350px;
-  margin: 0 auto;
-  background-color: #fff;
-  box-shadow: 2px 2px 24px -1px rgba(0, 0, 0, 0.3);
-  padding: 20px 10px;
-  position: relative;
-  transition: all 0.3s ease;
+  max-width: 200px;
+  height: 200px;
+  border: 3px solid #070052;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 auto 20px;
 }
-.about .team .teamWrap .teacher:hover {
-  background-color: #070052;
-  color: #fff;
+.about .teamHolder .teamWrap .team .imgWrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
-.about .team .teamWrap .teacher:hover .teacher-name {
-  color: #fff;
+.about .teamHolder .teamWrap .team .textWrap h4 {
+  font-style: italic;
+  color: #070052;
 }
-.about .team .teamWrap .teacher:hover .teacher-details strong {
-  color: #fff;
-}
-.about .team .teamWrap .teacher:hover::after {
-  background-color: #fff;
-}
-.about .team .teamWrap .teacher:after {
-  content: "";
-  position: absolute;
-  background-color: #070052;
-  overflow: hidden;
-  z-index: 1;
-  width: 80px;
-  height: 80px;
-  right: 0;
-  bottom: 0;
-  border-radius: 100% 0 0 0;
-}
-.about .team .teamWrap .teacher .teacher-name {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-.about .team .teamWrap .teacher .teacher-details {
-  text-align: left;
-  padding: 0;
-  font-size: 16px;
-  line-height: 20px;
-}
-.about .team .teamWrap .teacher .teacher-details li {
-  margin-bottom: 8px;
-}
-.about .team .teamWrap .teacher .teacher-details strong {
-  color: #555;
-  font-weight: 900;
+.about .teamHolder .teamWrap .team .textWrap h4 strong {
+  color: #FFB800;
 }
 
 .signup {
@@ -1689,6 +1664,95 @@ footer .footer-bottom {
 }
 .course .category .slide .textWrap p {
   margin-bottom: 10px;
+}
+
+.privacy-policy {
+  padding: 20px 0 30px;
+  background-color: #f9f9f9;
+}
+@media (min-width: 992px) {
+  .privacy-policy {
+    padding: 50px 0;
+  }
+}
+.privacy-policy .container {
+  margin: 0 auto;
+  padding: 30px;
+}
+.privacy-policy .container h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+.privacy-policy .container h2 {
+  margin: 20px 0 10px;
+  color: #444;
+}
+.privacy-policy .container h3 {
+  margin-top: 15px;
+  color: #555;
+}
+.privacy-policy .container p {
+  color: #666;
+  margin-bottom: 15px;
+}
+.privacy-policy .container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.privacy-policy .container ul li {
+  font-size: 16px;
+  line-height: 20px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.privacy-policy .container strong {
+  color: #333;
+}
+.privacy-policy .container a {
+  color: #007bff;
+}
+.privacy-policy .container a:hover {
+  text-decoration: underline;
+}
+
+.terms-conditions {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+.terms-conditions .container {
+  margin: 0 auto;
+}
+.terms-conditions .container h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+.terms-conditions .container h2 {
+  margin: 20px 0 10px;
+  color: #444;
+}
+.terms-conditions .container p {
+  font-size: 16px;
+  line-height: 20px;
+  color: #666;
+  margin-bottom: 15px;
+}
+.terms-conditions .container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.terms-conditions .container ul li {
+  font-size: 16px;
+  line-height: 20px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.terms-conditions .container strong {
+  color: #333;
+}
+.terms-conditions .container a {
+  color: #007bff;
 }
 
 html {
